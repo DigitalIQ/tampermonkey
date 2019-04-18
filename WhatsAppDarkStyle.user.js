@@ -37,5 +37,7 @@ addGlobalStyle('.pane-chat-body { background-color: #222 !important; }');
 addGlobalStyle('.message-out { background-color: rebeccapurple !important; color: white; }');
 addGlobalStyle('span.tail-container { width: 0;}');
 addGlobalStyle('.message-out>div>div:nth-child(2)>div>span { color: whitesmoke; }');
+addGlobalStyle('.message-out>div>div>div>div { background-color: rebeccapurple; }');
+addGlobalStyle('.message-out>div>div>div>div>div>div>span { color: whitesmoke; }');
 //addGlobalStyle('#main>header { background-color: #808080 !important; }');
 //addGlobalHTML('.input-search','class','autofocus');

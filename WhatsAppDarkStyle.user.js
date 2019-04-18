@@ -29,11 +29,8 @@ function addGlobalHTML(element,attr,val) {
     elem.setAttributeNode(att);
 }
 
-addGlobalStyle('.app-wrapper { background-color: #111 !important; }');
-addGlobalStyle('.app-wrapper::before { background-color: #000 !important; }');
-addGlobalStyle('.drawer-header { background-color: #069 !important; }');
-addGlobalStyle('.pane-header { background-color: #98CA6B !important; }');
-addGlobalStyle('.pane-chat-body { background-color: #222 !important; }');
+addGlobalStyle('.app-wrapper-web { background-color: #111 !important; }');
+addGlobalStyle('.app-wrapper-web::before { background-color: #000 !important; }');
 addGlobalStyle('.message-out { background-color: rebeccapurple !important; color: white; }');
 addGlobalStyle('span.tail-container { width: 0;}');
 addGlobalStyle('.message-out>div>div:nth-child(2)>div>span { color: whitesmoke; }');
@@ -42,3 +39,8 @@ addGlobalStyle('.message-out>div>div>div>div>div>div>span { color: whitesmoke; }
 addGlobalStyle('.message-out>span>div { background: none !important; }');
 //addGlobalStyle('#main>header { background-color: #808080 !important; }');
 //addGlobalHTML('.input-search','class','autofocus');
+
+// deprecated by WhatsApp
+//addGlobalStyle('.drawer-header { background-color: #069 !important; }');
+//addGlobalStyle('.pane-header { background-color: #98CA6B !important; }');
+//addGlobalStyle('.pane-chat-body { background-color: #222 !important; }');

@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         WhatsApp Dark Style
 // @namespace    
-// @version      0.2.11
+// @version      0.3.0
 // @description  Darker Style for WhatsApp website
 // @author       Manuel Bissinger
 // @match        https://web.whatsapp.com/
@@ -29,19 +29,20 @@ function addGlobalHTML(element,attr,val) {
     elem.setAttributeNode(att);
 }
 
-var own_color = 'rebeccapurple';
+var own_background_color = 'rebeccapurple';
+var own_font_color = 'whitesmoke';
 // no effect anymore
 //addGlobalStyle('.app-wrapper-web { background-color: #111 !important; }');
 //addGlobalStyle('.app-wrapper-web::before { background-color: #000 !important; }');
 
-addGlobalStyle('body>div>div>div>div>div>span>div>div>header { background-color: own_color !important; }');
-addGlobalStyle('body>div>div>div>div>div>span>div>span>div>header { background-color: rebeccapurple !important; }');
-addGlobalStyle('body>div>div>div>div>div>span>div>span>div>div>div>div>div>div>div { background-color: rebeccapurple !important; border-color: rebeccapurple !important; }');
-addGlobalStyle('.message-out { background-color: rebeccapurple !important; color: white; }');
+addGlobalStyle('body>div>div>div>div>div>span>div>div>header { background-color: own_background_color !important; }');
+addGlobalStyle('body>div>div>div>div>div>span>div>span>div>header { background-color: own_background_color !important; }');
+addGlobalStyle('body>div>div>div>div>div>span>div>span>div>div>div>div>div>div>div { background-color: own_background_color !important; border-color: own_background_color !important; }');
+addGlobalStyle('.message-out { background-color: own_background_color !important; color: own_font_color; }');
 addGlobalStyle('span.tail-container { width: 0;}');
-addGlobalStyle('.message-out>div>div:nth-child(2)>div>span { color: whitesmoke; }');
-addGlobalStyle('.message-out>div>div>div>div { background-color: rebeccapurple !important; }');
-addGlobalStyle('.message-out>div>div>div>div>div>div>span { color: whitesmoke; }');
+addGlobalStyle('.message-out>div>div:nth-child(2)>div>span { color: own_font_color; }');
+addGlobalStyle('.message-out>div>div>div>div { background-color: own_background_color !important; }');
+addGlobalStyle('.message-out>div>div>div>div>div>div>span { color: own_font_color; }');
 addGlobalStyle('.message-out>span>div { background: none !important; }');
 //addGlobalStyle('#main>header { background-color: #808080 !important; }');
 //addGlobalHTML('.input-search','class','autofocus');

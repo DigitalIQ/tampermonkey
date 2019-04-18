@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         WhatsApp Dark Style
 // @namespace
-// @version      0.3.1
+// @version      0.3.3
 // @description  Darker Style for WhatsApp website
 // @author       Manuel Bissinger
 // @match        https://web.whatsapp.com/
@@ -9,9 +9,15 @@
 // @supportURL    https://github.com/DigitalIQ/Tampermonkey/blob/master/WhatsAppDarkStyle.user.js
 // @updateURL     https://github.com/DigitalIQ/Tampermonkey/raw/master/WhatsAppDarkStyle.user.js
 // @downloadURL   https://github.com/DigitalIQ/Tampermonkey/raw/master/WhatsAppDarkStyle.user.js
-// @grant         none
+// @grant         GM_setValue
+// @grant         GM_getValue
 // @run-at        document-end
 // ==/UserScript==
+
+GM_setValue('own_background_color', 'rebeccapurple');
+GM_setValue('own_font_color', 'whitesmoke');
+GM_setValue('mate_background_color', 'firebrick');
+GM_setValue('mate_font_color', 'whitesmoke');
 
 function addGlobalStyle(css) {
     var head, style;
@@ -33,15 +39,20 @@ function addGlobalHTML(element,attr,val) {
 //addGlobalStyle(".app-wrapper-web { background-color: #111 !important; }");
 //addGlobalStyle(".app-wrapper-web::before { background-color: #000 !important; }");
 
-addGlobalStyle("body>div>div>div>div>div>span>div>div>header { background-color: rebeccapurple !important; }");
-addGlobalStyle("body>div>div>div>div>div>span>div>span>div>header { background-color: rebeccapurple !important; }");
-addGlobalStyle("body>div>div>div>div>div>span>div>span>div>div>div>div>div>div>div { background-color: rebeccapurple !important; border-color: rebeccapurple !important; }");
-addGlobalStyle(".message-out { background-color: rebeccapurple !important; color: whitesmoke; }");
-addGlobalStyle("span.tail-container { width: 0;}");
-addGlobalStyle(".message-out>div>div:nth-child(2)>div>span { color: whitesmoke; }");
-addGlobalStyle(".message-out>div>div>div>div { background-color: rebeccapurple !important; }");
-addGlobalStyle(".message-out>div>div>div>div>div>div>span { color: whitesmoke; }");
+addGlobalStyle("body>div>div>div>div>div>span>div>div>header { background-color: " + GM_getValue('own_background_color') + " !important; }");
+addGlobalStyle("body>div>div>div>div>div>span>div>span>div>header { background-color: " + GM_getValue('own_background_color') + " !important; }");
+addGlobalStyle("body>div>div>div>div>div>span>div>span>div>div>div>div>div>div>div { background-color: " + GM_getValue('own_background_color') + " !important; border-color: " + GM_getValue('own_background_color') + " !important; }");
+addGlobalStyle(".message-out { background-color: " + GM_getValue('own_background_color') + " !important; color: " + GM_getValue('own_font_color') + "; }");
+addGlobalStyle(".message-in { background-color: " + GM_getValue('mate_background_color') + " !important; color: " + GM_getValue('mate_font_color') + "; }");
+addGlobalStyle(".message-out>div>div:nth-child(2)>div>span { color: " + GM_getValue('own_font_color') + "; }");
+addGlobalStyle(".message-in>div>div:nth-child(2)>div>span { color: " + GM_getValue('mate_font_color') + "; }");
+addGlobalStyle(".message-out>div>div>div>div { background-color: " + GM_getValue('own_background_color') + " !important; }");
+addGlobalStyle(".message-in>div>div>div>div { background-color: " + GM_getValue('mate_background_color') + " !important; }");
+addGlobalStyle(".message-out>div>div>div>div>div>div>span { color: " + GM_getValue('own_font_color') + "; }");
+addGlobalStyle(".message-in>div>div>div>div>div>div>span { color: " + GM_getValue('mate_font_color') + "; }");
 addGlobalStyle(".message-out>span>div { background: none !important; }");
+addGlobalStyle(".message-in>span>div { background: none !important; }");
+addGlobalStyle("span.tail-container { width: 0;}");
 //addGlobalStyle("#main>header { background-color: #808080 !important; }");
 //addGlobalHTML(".input-search","class","autofocus");
 

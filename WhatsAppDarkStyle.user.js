@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         WhatsApp Dark Style
 // @namespace    
-// @version      0.2.6
+// @version      0.2.7
 // @description  Darker Style for WhatsApp website
 // @author       Manuel Bissinger
 // @match        https://web.whatsapp.com/

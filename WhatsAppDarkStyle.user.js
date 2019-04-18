@@ -34,5 +34,7 @@ addGlobalStyle('.app-wrapper::before { background-color: #000 !important; }');
 addGlobalStyle('.drawer-header { background-color: #069 !important; }');
 addGlobalStyle('.pane-header { background-color: #98CA6B !important; }');
 addGlobalStyle('.pane-chat-body { background-color: #222 !important; }');
-addGlobalStyle('.message-out { background-color: #98CA6B !important; }');
+addGlobalStyle('.message-out { background-color: rebeccapurple !important; color: white; }');
+addGlobalStyle('span.tail-container { width: 0 !important;}');
+//addGlobalStyle('#main>header { background-color: #808080 !important; }');
 //addGlobalHTML('.input-search','class','autofocus');

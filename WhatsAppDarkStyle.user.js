@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         WhatsApp Dark Style
 // @namespace
-// @version      0.3.4
+// @version      0.3.5
 // @description  Darker Style for WhatsApp website
 // @author       Manuel Bissinger
 // @match        https://web.whatsapp.com/
@@ -9,6 +9,7 @@
 // @supportURL    https://github.com/DigitalIQ/Tampermonkey/blob/master/WhatsAppDarkStyle.user.js
 // @updateURL     https://github.com/DigitalIQ/Tampermonkey/raw/master/WhatsAppDarkStyle.user.js
 // @downloadURL   https://github.com/DigitalIQ/Tampermonkey/raw/master/WhatsAppDarkStyle.user.js
+// @require		  https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js
 // @grant         GM_setValue
 // @grant         GM_getValue
 // @run-at        document-end
@@ -18,6 +19,7 @@ GM_setValue('own_background_color', 'rebeccapurple');
 GM_setValue('own_font_color', 'whitesmoke');
 GM_setValue('mate_background_color', 'firebrick');
 GM_setValue('mate_font_color', 'whitesmoke');
+GM_setValue('link_font_color', 'gold');
 GM_setValue('chat_list_width', '20%');
 
 function addGlobalStyle(css) {
@@ -40,6 +42,7 @@ addGlobalStyle(".app-wrapper-web::after { background-color: " + GM_getValue('own
 addGlobalStyle("body>div>div>div>div:last-child>div { border-color: " + GM_getValue('own_background_color') + " !important; }");
 addGlobalStyle(".app-wrapper-web { background-color: dimgray !important; }");
 addGlobalStyle("body>div>div>div>div:last-child>div:after { border-color: " + GM_getValue('own_background_color') + " !important; }");
+addGlobalStyle("a { color: " + GM_getValue('link_font_color') + " !important; }");
 
 addGlobalStyle("body>div>div>div>div>div>span>div>div>header { background-color: " + GM_getValue('own_background_color') + " !important; }");
 addGlobalStyle("body>div>div>div>div>div>span>div>span>div>header { background-color: " + GM_getValue('own_background_color') + " !important; }");
@@ -54,8 +57,12 @@ addGlobalStyle(".message-out>div>div>div>div>div>div>span { color: " + GM_getVal
 addGlobalStyle(".message-in>div>div>div>div>div>div>span { color: " + GM_getValue('mate_font_color') + "; }");
 addGlobalStyle(".message-out>span>div { background: none !important; }");
 addGlobalStyle(".message-in>span>div { background: none !important; }");
+
 addGlobalStyle("span.tail-container { width: 0;}");
-addGlobalStyle(".two>div:nth-child(2)>div { flex: " + GM_getValue('chat_list_width') + ";}");
+
+//TODO: Selector not correct as yet.
+//addGlobalStyle(".two>div:nth-child(2)>div { flex: " + GM_getValue('chat_list_width') + ";}");
+
 //addGlobalStyle("#main>header { background-color: #808080 !important; }");
 //addGlobalHTML(".input-search","class","autofocus");
 
